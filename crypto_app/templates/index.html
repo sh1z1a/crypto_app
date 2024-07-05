@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}CryptoApp{% endblock %}
+
+{% block content %}
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Encrypt Text</h5>
+                <form action="{{ url_for('encrypt') }}" method="post">
+                    <div class="form-group">
+                        <label for="encryptText">Enter text to encrypt:</label>
+                        <input type="text" class="form-control" id="encryptText" name="text">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Encrypt</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Decrypt Text</h5>
+                <form action="{{ url_for('decrypt') }}" method="post">
+                    <div class="form-group">
+                        <label for="decryptText">Enter text to decrypt:</label>
+                        <input type="text" class="form-control" id="decryptText" name="text">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Decrypt</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
